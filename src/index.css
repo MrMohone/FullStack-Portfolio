@@ -820,3 +820,232 @@ body {
     font-size: 2rem;
   }
 }
+
+/* Projects Section */
+.projects-section {
+  padding: 6rem 2rem;
+  background: var(--code-bg);
+  min-height: 100vh;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem;
+}
+
+.section-subtitle {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.projects-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.project-card {
+  background: var(--bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-border);
+}
+
+.project-card.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.project-card.featured .project-image-container {
+  flex: 1.5;
+  height: 100%;
+}
+
+.project-card.featured .project-content {
+  flex: 1;
+  padding: 3rem;
+}
+
+.project-image-container {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card.featured .project-image-container {
+  height: 400px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-links {
+  transform: translateY(0);
+}
+
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  background: var(--bg);
+  color: var(--text-h);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-family: var(--heading);
+  color: var(--text-h);
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+.project-card.featured .project-title {
+  font-size: 2rem;
+}
+
+.project-desc {
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+}
+
+.projects-cta {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text-h);
+  border: 2px solid var(--text-h);
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--text-h);
+  color: var(--bg);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 992px) {
+  .project-card.featured {
+    flex-direction: column;
+  }
+  
+  .project-card.featured .project-image-container {
+    height: 300px;
+  }
+  
+  .project-card.featured .project-content {
+    padding: 2rem;
+  }
+  
+  .projects-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 4rem 1.5rem;
+  }
+}
