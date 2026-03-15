@@ -1,5 +1,6 @@
 import Navbar from "./assets/components/Navbar"
 import Hero from "./assets/components/Hero"
+import Stats from "./assets/components/Stats"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <Stats />
     </>
   )
 }
