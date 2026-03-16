@@ -475,69 +475,57 @@ body {
   transform: translateY(-5px);
 }
 
-.floating-card {
+.tech-logos-column {
   position: absolute;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 1.25rem;
-  border-radius: 16px;
+  top: 10%;
+  left: -25%;
+  height: 80%;
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
 }
 
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+.floating-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-3d-wrapper {
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-.card-1 {
-  top: 15%;
-  left: -15%;
-  animation-delay: 0s;
-}
-
-.card-2 {
-  bottom: 15%;
-  right: -10%;
-  animation-delay: 3s;
-}
-
-@keyframes float-card {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
-
-.card-icon {
-  font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  width: 40px;
-  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%; /* Give it a round shape */
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-info h4 {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text-h);
-  font-weight: 700;
+.logo-3d-wrapper:hover {
+  transform: translateZ(20px) scale(1.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: var(--accent);
 }
 
-.card-info p {
-  margin: 0;
-  font-size: 0.8rem;
-  color: var(--text);
+.tech-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
+
+/* Offsets for a scattered look */
+.logo-1 { transform: translateX(20px); }
+.logo-2 { transform: translateX(-15px); }
+.logo-3 { transform: translateX(30px); }
+.logo-4 { transform: translateX(-5px); }
 
 @media (max-width: 900px) {
   .hero-container {
