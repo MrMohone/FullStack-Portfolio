@@ -13,7 +13,7 @@ const Projects = () => {
             image: proj1,
             tech: ["React", "Node.js", "MongoDB", "Chart.js"],
             liveLink: "#",
-            githubLink: "#",
+            githubLink: "https://github.com/MrMohone",
             featured: true
         },
         {
@@ -23,7 +23,7 @@ const Projects = () => {
             image: proj2,
             tech: ["React Native", "Firebase", "Redux", "Tailwind"],
             liveLink: "#",
-            githubLink: "#",
+            githubLink: "https://github.com/MrMohone",
             featured: false
         },
         {
@@ -33,7 +33,17 @@ const Projects = () => {
             image: proj3,
             tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
             liveLink: "#",
-            githubLink: "#",
+            githubLink: "https://github.com/MrMohone",
+            featured: false
+        },
+        {
+            id: 4,
+            title: "SaaS Financial Platform",
+            description: "Secure and scalable financial tech platform for small businesses to manage their cash flow, invoices, and accounting.",
+            image: proj3,
+            tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+            liveLink: "#",
+            githubLink: "https://github.com/MrMohone",
             featured: false
         }
     ];
@@ -46,21 +56,21 @@ const Projects = () => {
                     My Recent <span className="text-gradient">Work</span>
                 </h2>
                 <p className="section-description">
-                    Here are a few of my favorite projects. They showcase my journey 
+                    Here are a few of my favorite projects. They showcase my journey
                     and my ability to build complex, scalable applications.
                 </p>
             </div>
 
             <div className="projects-grid">
                 {projects.map((project) => (
-                    <div 
-                        key={project.id} 
+                    <div
+                        key={project.id}
                         className={`project-card ${project.featured ? 'featured' : ''}`}
                     >
                         <div className="project-image-container">
-                            <img 
-                                src={project.image} 
-                                alt={project.title} 
+                            <img
+                                src={project.image}
+                                alt={project.title}
                                 className="project-image"
                             />
                             <div className="project-overlay">
@@ -78,7 +88,7 @@ const Projects = () => {
                         <div className="project-content">
                             <h3 className="project-title">{project.title}</h3>
                             <p className="project-desc">{project.description}</p>
-                            
+
                             <div className="project-tech">
                                 {project.tech.map((techItem, index) => (
                                     <span key={index} className="tech-tag">{techItem}</span>
@@ -88,7 +98,7 @@ const Projects = () => {
                     </div>
                 ))}
             </div>
-            
+
             <div className="projects-cta">
                 <button className="secondary-btn">View All Projects</button>
             </div>

@@ -59,9 +59,9 @@ const Hero = () => {
                         </button>
 
                         <div className="social-links">
-                            <a href="#" className="social-link" aria-label="GitHub"><Github size={22} /></a>
-                            <a href="#" className="social-link" aria-label="LinkedIn"><Linkedin size={22} /></a>
-                            <a href="#" className="social-link" aria-label="Email"><Mail size={22} /></a>
+                            <a href="https://github.com/MrMohone" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub"><Github size={22} /></a>
+                            <a href="https://www.linkedin.com/in/mohammed-awol1" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn"><Linkedin size={22} /></a>
+                            <a href="#contact" className="social-link" aria-label="Email"><Mail size={22} /></a>
                         </div>
                     </motion.div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Code2, Heart, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -16,10 +16,9 @@ const Footer = () => {
                             Let's build something amazing together.
                         </p>
                         <div className="footer-socials">
-                            <a href="#" className="social-icon" aria-label="GitHub"><Github size={20} /></a>
-                            <a href="#" className="social-icon" aria-label="LinkedIn"><Linkedin size={20} /></a>
-                            <a href="#" className="social-icon" aria-label="Twitter"><Twitter size={20} /></a>
-                            <a href="#" className="social-icon" aria-label="Email"><Mail size={20} /></a>
+                            <a href="https://github.com/MrMohone" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub"><Github size={20} /></a>
+                            <a href="https://www.linkedin.com/in/mohammed-awol1" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                            <a href="#contact" className="social-icon" aria-label="Email"><Mail size={20} /></a>
                         </div>
                     </div>
 
