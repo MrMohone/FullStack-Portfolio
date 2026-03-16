@@ -68,7 +68,7 @@ const Hero = () => {
                     <motion.div className="tech-stack" variants={itemVariants}>
                         <p>Tech Stack:</p>
                         <div className="tech-icons">
-                            {['React', 'Node.js', 'Next.js', 'Framer Motion'].map((tech) => (
+                            {['Python', 'Php', 'Js', 'React', 'Bootstrap,Taiwind', 'Django', 'Django Rest', 'Git', 'Css', 'Html'].map((tech) => (
                                 <span key={tech} className="tech-badge">{tech}</span>
                             ))}
                         </div>
@@ -101,7 +101,7 @@ const Hero = () => {
                                     className={`floating-logo logo-${index + 1}`}
                                     initial={{ opacity: 0, x: -50 }}
                                     animate={{ opacity: 1, x: 0, y: [0, -15, 0] }}
-                                    transition={{ 
+                                    transition={{
                                         opacity: { duration: 0.8, delay: 0.5 + index * 0.2 },
                                         x: { duration: 0.8, delay: 0.5 + index * 0.2, type: 'spring' },
                                         y: { duration: 4 + index, repeat: Infinity, delay: index * 0.5, ease: "easeInOut" }

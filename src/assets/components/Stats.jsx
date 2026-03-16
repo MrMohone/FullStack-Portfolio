@@ -4,12 +4,11 @@ const Stats = () => {
     const statsData = [
         { label: 'Years Experience', value: '3+' },
         { label: 'Projects Completed', value: '20+' },
-        { label: 'Tech Stack', value: '12+' },
-        { label: 'Happy Clients', value: '15+' }
+        { label: 'Tech Stack', value: '10+' },
     ];
 
     return (
-        <section className="stats-section pt-20 mt-20">
+        <section className="stats-section">
             <div className="stats-container">
                 {statsData.map((stat, index) => (
                     <div key={index} className="stat-item">
