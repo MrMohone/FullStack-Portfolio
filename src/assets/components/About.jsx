@@ -23,6 +23,32 @@ const About = () => {
                 toggleActions: "play none none reverse",
             }
         });
+
+        gsap.from(".about-content", {
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".about-content",
+                start: "top 70%",
+                toggleActions: "play none none reverse",
+            }
+        });
+
+        gsap.from(".about-left-img", {
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".about-left-img",
+                start: "top 70%",
+                toggleActions: "play none none reverse",
+            }
+        });
     }, { scope: containerRef });
 
     return (
@@ -58,7 +84,7 @@ const About = () => {
 
                     <p className="about-text">
                         My journey in tech started at Wachemo University, where I developed a deep
-                        fascination for how information systems can solve real-world problems. Over
+                        Education Mangment system to solve real-world problems. Over
                         the last 3 years, I've transitioned from a curious student to a professional
                         full-stack developer.
                     </p>
