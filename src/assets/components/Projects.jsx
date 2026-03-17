@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/all';
 
 const Projects = () => {
     useGSAP(() => {
-        gsap.from("#projects", {
+        gsap.from(".section-header", {
             scrollTrigger: {
                 trigger: ".section-header",
                 start: "top 90%",
@@ -34,6 +34,7 @@ const Projects = () => {
             duration: 1,
             stagger: 0.6,
             ease: "power1.inOut",
+
         });
     }, []);
     const projects = [
@@ -86,10 +87,6 @@ const Projects = () => {
                 <h2 className="section-title">
                     My Recent <span className="text-gradient">Work</span>
                 </h2>
-                <p className="section-description">
-                    Here are a few of my favorite projects. They showcase my journey
-                    and my ability to build complex, scalable applications.
-                </p>
             </div>
 
             <div className="projects-grid">

@@ -54,7 +54,7 @@ const Navbar = () => {
                             {item.name}
                         </a>
                     ))}
-                    <button className="nav-btn">Hire Me</button>
+                    <a href="#contact" className="nav-btn">Hire Me</a>
                 </div>
 
                 <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
@@ -81,7 +81,7 @@ const Navbar = () => {
                                     {item.name}
                                 </a>
                             ))}
-                            <button className="nav-btn" onClick={toggleMobileMenu}>Hire Me</button>
+                            <a href="#contact" className="nav-btn" onClick={toggleMobileMenu}>Hire Me</a>
                         </div>
                     </motion.div>
                 )}

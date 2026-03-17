@@ -1,7 +1,38 @@
 import React from 'react';
 import { Code2, Heart, Github, Linkedin, Mail } from 'lucide-react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
+    useGSAP(() => {
+        gsap.from(".footer-brand", {
+            scrollTrigger: {
+                trigger: ".footer",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: 1,
+            },
+            x: -100,
+            opacity: 0,
+            ease: "power2.out",
+        });
+
+        gsap.from(".footer-links-group", {
+            scrollTrigger: {
+                trigger: ".footer",
+                start: "top 90%",
+                end: "top 50%",
+                scrub: 1,
+            },
+            x: 100,
+            opacity: 0,
+            ease: "power2.out",
+        });
+    }, []);
+
     return (
         <footer className="footer">
             <div className="footer-top">
@@ -12,7 +43,7 @@ const Footer = () => {
                             Portfolio<span>.</span>
                         </a>
                         <p className="footer-desc">
-                            Crafting elegant digital solutions with modern technologies. 
+                            Crafting elegant digital solutions with modern technologies.
                             Let's build something amazing together.
                         </p>
                         <div className="footer-socials">
@@ -32,14 +63,14 @@ const Footer = () => {
                                 <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
-                        
+
                         <div className="footer-links-col">
                             <h4>Services</h4>
                             <ul>
-                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">Full Stack Development</a></li>
+                                <li><a href="#">Front End Development</a></li>
+                                <li><a href="#">Back End Development</a></li>
                                 <li><a href="#">UI/UX Design</a></li>
-                                <li><a href="#">Mobile Apps</a></li>
-                                <li><a href="#">API Integration</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,7 +80,7 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="footer-container bottom-content">
                     <p className="footer-text">
-                        © {new Date().getFullYear()} MrMohone. All rights reserved.
+                        © {new Date().getFullYear()} Mohammed Awol. All rights reserved.
                     </p>
                     <p className="footer-made-by">
                         Built with <Heart size={16} color="#ff3366" fill="#ff3366" /> and React

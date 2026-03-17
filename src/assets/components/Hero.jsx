@@ -43,9 +43,41 @@ const Hero = () => {
                         Available for work
                     </motion.div>
 
-                    <motion.h1 className="hero-title" variants={itemVariants}>
-                        Building Digital <br />
-                        <span className="text-gradient">Experiences</span>
+                    <motion.h1 className="hero-title">
+                        {"Building Digital".split('').map((char, index) => (
+                            <motion.span
+                                key={`bd-${index}`}
+                                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                transition={{
+                                    duration: 0.8,
+                                    stagger: 0.05,
+                                    delay: index * 0.05 + 0.3, 
+                                    ease: [0.175, 0.885, 0.32, 1.275] // Custom back.out ease mapping
+                                }}
+                                style={{ display: 'inline-block' }}
+                            >
+                                {char === ' ' ? '\u00A0' : char}
+                            </motion.span>
+                        ))}
+                        <br />
+                        <span className="text-gradient">
+                            {"Experiences".split('').map((char, index) => (
+                                <motion.span
+                                    key={`exp-${index}`}
+                                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: (index + 16) * 0.05 + 0.3,
+                                        ease: [0.175, 0.885, 0.32, 1.275]
+                                    }}
+                                    style={{ display: 'inline-block' }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </span>
                     </motion.h1>
 
                     <motion.p className="hero-subtitle" variants={itemVariants}>

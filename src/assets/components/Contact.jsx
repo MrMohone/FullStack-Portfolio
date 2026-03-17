@@ -1,7 +1,51 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Send, User, MessageSquare } from 'lucide-react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Contact = () => {
+
+    useGSAP(() => {
+        gsap.from(".char", {
+            scrollTrigger: {
+                trigger: ".contact-header",
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.05,
+            ease: "back.out(1.7)",
+        });
+
+        gsap.from(".section-description", {
+            scrollTrigger: {
+                trigger: ".contact-header",
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.8,
+            ease: "power2.out",
+        });
+
+        gsap.from(".contact-content", {
+            scrollTrigger: {
+                trigger: ".contact-content",
+                start: "top 80%",
+                end: "top 50%",
+                scrub: 1,
+            },
+            y: 20,
+            scale: 0.9,
+            opacity: 0,
+            ease: "power1.inOut",
+        });
+    }, []);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -27,7 +71,7 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
         setIsSent(false); // Reset just in case
-        
+
         try {
             const payload = {
                 ...formData,
@@ -38,7 +82,7 @@ const Contact = () => {
 
             const response = await fetch("https://formsubmit.co/ajax/mohammedawol0837@gmail.com", {
                 method: "POST",
-                headers: { 
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
@@ -49,7 +93,7 @@ const Contact = () => {
                 // Form was submitted successfully
                 setIsSent(true);
                 setFormData({ name: '', email: '', message: '' });
-                
+
                 // Show "Sent your message" on the button for 3 seconds, then revert to default
                 setTimeout(() => {
                     setIsSent(false);
@@ -70,10 +114,15 @@ const Contact = () => {
             <div className="contact-container">
                 <div className="contact-header">
                     <h2 className="section-title">
-                        Let's Work <span className="text-gradient">Together</span>
+                        {"Let's Work Together".split('').map((char, index) => (
+                            <span key={`w-${index}`} className="char" style={{ display: 'inline-block' }}>
+                                {char === ' ' ? '\u00A0' : char}
+                            </span>
+                        ))}
+
                     </h2>
                     <p className="section-description">
-                        Have a project in mind or want to discuss a potential collaboration? 
+                        Have a project in mind or want to discuss a potential collaboration?
                         I'd love to hear from you.
                     </p>
                 </div>
@@ -86,7 +135,7 @@ const Contact = () => {
                             </div>
                             <div className="info-details">
                                 <h4>Email Me</h4>
-                                <p>hello@example.com</p>
+                                <p>mohammedawol0837@gmail.com</p>
                             </div>
                         </div>
 
@@ -112,7 +161,7 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-form-wrapper">
-                        <form 
+                        <form
                             onSubmit={handleSubmit}
                             className="contact-form glass-form"
                         >
@@ -120,10 +169,10 @@ const Contact = () => {
                                 <label htmlFor="name">Full Name</label>
                                 <div className="input-with-icon">
                                     <User className="input-icon" size={20} />
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        name="name" 
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
                                         placeholder="John Doe"
                                         value={formData.name}
                                         onChange={handleChange}
@@ -135,15 +184,15 @@ const Contact = () => {
                                     <div className="focus-border"></div>
                                 </div>
                             </div>
-                            
+
                             <div className={`form-group ${focusedField === 'email' ? 'focused' : ''}`}>
                                 <label htmlFor="email">Email Address</label>
                                 <div className="input-with-icon">
                                     <Mail className="input-icon" size={20} />
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        name="email" 
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
                                         placeholder="john@example.com"
                                         value={formData.email}
                                         onChange={handleChange}
@@ -155,14 +204,14 @@ const Contact = () => {
                                     <div className="focus-border"></div>
                                 </div>
                             </div>
-                            
+
                             <div className={`form-group ${focusedField === 'message' ? 'focused' : ''}`}>
                                 <label htmlFor="message">Your Message</label>
                                 <div className="input-with-icon textarea-icon-wrapper">
                                     <MessageSquare className="input-icon textarea-icon" size={20} />
-                                    <textarea 
-                                        id="message" 
-                                        name="message" 
+                                    <textarea
+                                        id="message"
+                                        name="message"
                                         placeholder="Tell me about your project..."
                                         rows="5"
                                         value={formData.message}
@@ -175,7 +224,7 @@ const Contact = () => {
                                     <div className="focus-border"></div>
                                 </div>
                             </div>
-                            
+
                             <button type="submit" className="primary-btn submit-btn glowing-btn" disabled={isSubmitting}>
                                 <span>{isSubmitting ? 'Sending...' : (isSent ? 'Sent your message' : 'Send Message')}</span>
                                 <span className="btn-icon-wrapper">
