@@ -3,8 +3,39 @@ import { ExternalLink, Github } from 'lucide-react';
 import proj1 from '../project_1.png';
 import proj2 from '../project_2.png';
 import proj3 from '../project_3.png';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/all';
+
 
 const Projects = () => {
+    useGSAP(() => {
+        gsap.from("#projects", {
+            scrollTrigger: {
+                trigger: ".section-header",
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.6,
+            ease: "power1.inOut",
+        });
+
+        gsap.from(".projects-grid", {
+            scrollTrigger: {
+                trigger: ".projects-grid",
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.6,
+            ease: "power1.inOut",
+        });
+    }, []);
     const projects = [
         {
             id: 1,
