@@ -100,6 +100,8 @@ const Projects = () => {
                                 src={project.image}
                                 alt={project.title}
                                 className="project-image"
+                                loading="lazy"
+                                decoding="async"
                             />
                             <div className="project-overlay">
                                 <div className="project-links">

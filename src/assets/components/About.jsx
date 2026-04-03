@@ -67,6 +67,8 @@ const About = () => {
                             src={aboutImg}
                             alt="Developer working"
                             className="about-img"
+                            loading="lazy"
+                            decoding="async"
                         />
                         <div className="experience-badge bg-dark">
                             <span className="years">3+</span>

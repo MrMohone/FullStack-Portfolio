@@ -52,7 +52,7 @@ const Hero = () => {
                                 transition={{
                                     duration: 0.8,
                                     stagger: 0.05,
-                                    delay: index * 0.05 + 0.3, 
+                                    delay: index * 0.05 + 0.3,
                                     ease: [0.175, 0.885, 0.32, 1.275] // Custom back.out ease mapping
                                 }}
                                 style={{ display: 'inline-block' }}
@@ -86,7 +86,10 @@ const Hero = () => {
                     </motion.p>
 
                     <motion.div className="hero-actions" variants={itemVariants}>
-                        <button className="primary-btn">
+                        <button
+                            className="primary-btn"
+                            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
                             Explore Work <ArrowRight size={20} />
                         </button>
 
