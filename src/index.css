@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -34,7 +36,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: radial-gradient(circle at top left, var(--accent-bg), transparent 40%),
@@ -645,6 +648,7 @@ html, body {
     font-size: 1.8rem;
   }
 }
+
 /* Stats Section */
 .stats-section {
   position: relative;
@@ -655,7 +659,7 @@ html, body {
 }
 
 .stats-container {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--code-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
