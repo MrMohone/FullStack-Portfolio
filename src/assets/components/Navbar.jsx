@@ -36,7 +36,7 @@ const Navbar = () => {
     ];
 
     return (
-        <motion.div 
+        <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -64,7 +64,7 @@ const Navbar = () => {
 
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: '100vh' }}
                         exit={{ opacity: 0, height: 0 }}
@@ -72,9 +72,9 @@ const Navbar = () => {
                     >
                         <div className="nav-links">
                             {navItems.map((item) => (
-                                <a 
-                                    key={item.name} 
-                                    href={item.href} 
+                                <a
+                                    key={item.name}
+                                    href={item.href}
                                     className="nav-link"
                                     onClick={toggleMobileMenu}
                                 >
