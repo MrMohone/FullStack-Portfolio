@@ -208,6 +208,7 @@ body {
   font-size: 2rem;
   font-family: var(--heading);
   font-weight: 700;
+  color: var(--text-h);
 }
 
 @media (max-width: 768px) {
@@ -216,7 +217,7 @@ body {
     width: 95%;
   }
 
-  .navbar-wrapper .nav-links {
+  .navbar .nav-links {
     display: none;
   }
 
@@ -570,37 +571,51 @@ body {
 
 @media (max-width: 900px) {
   .hero-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
-    gap: 3rem;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    display: none !important;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    text-shadow: 0 0 40px rgba(217, 70, 239, 0.4);
+    line-height: 1.1;
   }
 
   .hero-subtitle {
     margin: 0 auto 2.5rem;
+    font-size: 1.15rem;
+    max-width: 90%;
   }
 
   .hero-actions {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .tech-icons {
     justify-content: center;
   }
-
-  .floating-card.card-1 {
-    left: 0;
-    top: 5%;
-  }
-
-  .floating-card.card-2 {
-    right: 0;
-    bottom: 5%;
-  }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
   }
 
   .hero-actions {
@@ -631,7 +646,7 @@ body {
   border-radius: 20px;
   padding: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
   position: relative;
@@ -695,7 +710,7 @@ body {
     gap: 3rem 2rem;
   }
 
-  .stat-item:not(:last-child)::after {
+  .stat-item:nth-child(2n)::after {
     display: none;
   }
 }
@@ -705,6 +720,10 @@ body {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     padding: 2rem;
+  }
+
+  .stat-item::after {
+    display: none;
   }
 }
 
@@ -1658,8 +1677,9 @@ body {
 
 @media (max-width: 600px) {
   .footer-links-group {
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   .bottom-content {

@@ -173,7 +173,7 @@ const Contact = () => {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        placeholder="John Doe"
+                                        placeholder="User Name"
                                         value={formData.name}
                                         onChange={handleChange}
                                         onFocus={() => handleFocus('name')}
@@ -193,7 +193,7 @@ const Contact = () => {
                                         type="email"
                                         id="email"
                                         name="email"
-                                        placeholder="john@example.com"
+                                        placeholder="User Email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         onFocus={() => handleFocus('email')}
