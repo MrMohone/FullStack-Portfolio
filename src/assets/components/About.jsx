@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import aboutImg from '../about_img1.png';
 import { Terminal, Lightbulb } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -64,7 +63,7 @@ const About = () => {
                         </div>
                         <img
                             ref={imageRef}
-                            src={aboutImg}
+                            src="/images/about_img1.png"
                             alt="Developer working"
                             className="about-img"
                             loading="lazy"

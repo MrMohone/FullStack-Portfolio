@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
-import developerImg from '../Generated Image March 16, 2026 - 2_03PM.png';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -128,7 +127,7 @@ const Hero = () => {
                 >
                     <div className="image-container">
                         <img
-                            src={developerImg}
+                            src="/images/Generated Image March 16, 2026 - 2_03PM.png"
                             alt="Developer Portrait"
                             className="developer-img"
                         />

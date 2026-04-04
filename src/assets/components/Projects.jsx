@@ -1,8 +1,5 @@
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
-import proj1 from '../project_1.png';
-import proj2 from '../project_2.png';
-import proj3 from '../project_3.png';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
@@ -42,7 +39,7 @@ const Projects = () => {
             id: 1,
             title: "E-Commerce Dashboard",
             description: "A comprehensive analytics dashboard for modern online stores with real-time data visualization and inventory management.",
-            image: proj1,
+            image: "/images/project_1.png",
             tech: ["React", "Node.js", "MongoDB", "Chart.js"],
             liveLink: "#",
             githubLink: "https://github.com/MrMohone",
@@ -52,7 +49,7 @@ const Projects = () => {
             id: 2,
             title: "Health & Fitness Tracker",
             description: "Mobile-first web application connecting users with their daily health metrics. Features custom workout plans and activity tracking.",
-            image: proj2,
+            image: "/images/project_2.png",
             tech: ["React Native", "Firebase", "Redux", "Tailwind"],
             liveLink: "#",
             githubLink: "https://github.com/MrMohone",
@@ -62,7 +59,7 @@ const Projects = () => {
             id: 3,
             title: "SaaS Financial Platform",
             description: "Secure and scalable financial tech platform for small businesses to manage their cash flow, invoices, and accounting.",
-            image: proj3,
+            image: "/images/project_3.png",
             tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
             liveLink: "#",
             githubLink: "https://github.com/MrMohone",
@@ -72,7 +69,7 @@ const Projects = () => {
             id: 4,
             title: "SaaS Financial Platform",
             description: "Secure and scalable financial tech platform for small businesses to manage their cash flow, invoices, and accounting.",
-            image: proj3,
+            image: "/images/project_3.png",
             tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
             liveLink: "#",
             githubLink: "https://github.com/MrMohone",
