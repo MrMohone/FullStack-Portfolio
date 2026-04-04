@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import developerImg from '../Generated Image March 16, 2026 - 2_03PM.png';
 
@@ -86,12 +86,22 @@ const Hero = () => {
                     </motion.p>
 
                     <motion.div className="hero-actions" variants={itemVariants}>
-                        <button
-                            className="primary-btn"
-                            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            Explore Work <ArrowRight size={20} />
-                        </button>
+                        <div className="hero-buttons">
+                            <button
+                                className="primary-btn"
+                                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                            >
+                                Explore Work <ArrowRight size={20} />
+                            </button>
+                            
+                            <a 
+                                href="/Mohammed_CV.pdf" 
+                                download="Mohammed_CV.pdf" 
+                                className="secondary-btn"
+                            >
+                                Download CV <Download size={20} />
+                            </a>
+                        </div>
 
                         <div className="social-links">
                             <a href="https://github.com/MrMohone" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub"><Github size={22} /></a>

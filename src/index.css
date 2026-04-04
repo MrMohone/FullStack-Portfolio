@@ -164,7 +164,7 @@ body {
 }
 
 .nav-logo {
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 700;
   color: var(--text-h);
   text-decoration: none;
@@ -188,7 +188,7 @@ body {
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
   transition: color 0.2s ease;
   position: relative;
 }
@@ -273,9 +273,9 @@ body {
 }
 
 .mobile-nav .nav-link {
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
   font-family: var(--heading);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-h);
 }
 
@@ -291,6 +291,20 @@ body {
 
   .mobile-menu-btn {
     display: block;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 989px) {
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+  
+  .nav-links {
+    gap: 1.2rem;
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -430,9 +444,16 @@ body {
 
 .hero-actions {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .primary-btn {
@@ -462,9 +483,40 @@ body {
   transition: transform 0.3s ease;
 }
 
+.secondary-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(217, 70, 239, 0.15); /* light fuchsia shadow */
+}
+
+.secondary-btn:hover svg {
+  transform: translateY(2px);
+  transition: transform 0.3s ease;
+}
+
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .social-link {
@@ -668,8 +720,11 @@ body {
   }
 
   .hero-actions {
+    align-items: center;
+  }
+  
+  .hero-buttons {
     justify-content: center;
-    flex-wrap: wrap;
   }
 
   .tech-icons {
@@ -687,11 +742,16 @@ body {
   }
 
   .hero-actions {
-    flex-direction: column;
     gap: 1.5rem;
   }
 
-  .primary-btn {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .primary-btn, .secondary-btn {
     width: 100%;
     justify-content: center;
   }
@@ -700,6 +760,12 @@ body {
 @media (max-width: 380px) {
   .hero-title {
     font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 254px) {
+  .nav-logo {
+    display: none;
   }
 }
 
@@ -940,7 +1006,7 @@ body {
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.2;
   color: var(--text-h);
@@ -1265,6 +1331,38 @@ body {
 @media (max-width: 768px) {
   .projects-section {
     padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 392px) {
+  .projects-section {
+    padding: 3rem 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
+  }
+  
+  .project-card.featured .project-image-container {
+    height: 200px;
+  }
+  
+  .project-image-container {
+    height: 180px;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
   }
 }
 
@@ -1653,6 +1751,43 @@ body {
     padding: 1rem;
     font-size: 1rem;
     border-radius: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-section {
+    padding: 2rem 0.75rem;
+  }
+
+  .contact-content {
+    padding: 1rem;
+  }
+
+  .contact-info-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .info-details p {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+
+  .input-with-icon input,
+  .input-with-icon textarea {
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    font-size: 0.85rem;
+  }
+
+  .input-icon {
+    left: 0.75rem;
+  }
+
+  .glowing-btn {
+    padding: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
