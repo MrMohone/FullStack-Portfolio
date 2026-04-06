@@ -14,6 +14,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    let timeouts = [];
     if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -21,9 +22,14 @@ function App() {
       
       const scrollPos = sessionStorage.getItem('scrollPosition');
       if (scrollPos) {
-        setTimeout(() => window.scrollTo(0, parseInt(scrollPos)), 100);
+        const targetScroll = parseInt(scrollPos, 10);
+        // Use staggered timeouts to handle lazy-loaded components making the document height increase
+        timeouts = [100, 300, 600, 1000].map(ms => 
+            setTimeout(() => window.scrollTo(0, targetScroll), ms)
+        );
       }
     }
+    return () => timeouts.forEach(clearTimeout);
   }, [isLoading]);
 
   return (
