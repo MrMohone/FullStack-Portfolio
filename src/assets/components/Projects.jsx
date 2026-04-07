@@ -62,7 +62,7 @@ const Projects = () => {
             image: "/images/project_3.png",
             tech: ["CSS", "Bootstrap", "JS", "PHP", "MySQL"],
             liveLink: "https://admas.ct.ws/",
-            githubLink: "https://github.com/MrMohone",
+            githubLink: "https://github.com/MrMohone/EMS_FOR_Admas",
             featured: false
         },
         {
